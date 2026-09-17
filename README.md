@@ -67,6 +67,22 @@ GIT_LFS_SKIP_SMUDGE=1 git clone <repo-url>
 git lfs pull
 ```
 
+## add LFS 파일
+
+```bash
+# 새로운 LFS 파일을 추가할 때는 일반적인 git add 명령을 사용하면 된다.
+git add <file>
+
+# 확인
+git lfs status
+git lfs ls-files | grep "ivi/some/path/new_file"
+
+# 이후 커밋 및 푸시는 기존과 동일
+git commit -m "add new LFS file"
+git push origin main
+```
+
+
 ## 기타
 
 - `*.o`, `*.a` 빌드 산출물은 `.gitignore` 로 제외되어 관리하지 않는다.
